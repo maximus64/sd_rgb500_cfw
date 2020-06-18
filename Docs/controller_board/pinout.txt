@@ -1,0 +1,19 @@
+MCU pin usage for controller board:
+
+PA4 - DAC output for Y
+PA5 - DAC output for X
+
+PA7 - YK output
+
+PA9 - DMX TX
+PA10 - DMX RX
+PA11 - DMX Flow controll - *reconfigured to USB DM
+PA12 - HE output - *reconfigured to USB DP
+
+PB5 - Mode SW
+PB6 - Down SW
+PB7 - Enter SW
+
+PB12 - R laser output
+PB13 - G laser output
+PB14 - B laser output

@@ -1,0 +1,3 @@
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="6464", ATTRS{idProduct}=="0001", \
+    MODE:="0666", \
+    SYMLINK+="maxlaser_%n"
