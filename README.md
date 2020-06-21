@@ -43,6 +43,23 @@ To add the USB port, we need to add 1.5k pull up for USB DP and cut the trace be
 
 ![controller board back](./Docs/controller_board/back.png)
 
+## Laser DAC mod
+
+Laser driver in this projector support dimming but there are only two DAC channels in MCU. To use this dimming feature, external DAC is needed.
+
+Currently TI DAC084S085/DAC124S085 is supported. To enable this feature, compile the firmware with `$ make LASER_DAC=1`
+
+![controller board front](./Docs/images/dac_mod.jpg)
+
+Rotate the 3 resistors to disconnect the output from GPIO pins, then connect the following pins:
+* DAC SYNC pin -> MCU PB12
+* DAC SCLK pin -> MCU PB13
+* DAC DIN pin -> MCU PB15
+* DAC VA and VREF to 3.3v (Note: add analog decoupling cap for these two)
+* DAC VOUT{A,B,C} to the rotated resistors for RGB laser output.
+
+Demo - https://www.youtube.com/watch?v=wXcMvL2OUvY
+
 ## Flashing the firmware
 
 Make sure to disconnect power from the projector before flashing the firmware.
